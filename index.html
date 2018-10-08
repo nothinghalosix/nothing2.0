@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/tailwind-styles.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <title>nothing 2.0</title>
+</head>
+
+<body class="bg-black">
+  <div class="container mx-auto sm:mx-4">
+    <div class="relative h-screen">
+      <div class="absolute pin-b mb-8">
+      <span class="text-red-dark uppercase hidden first">wschuetzenhofer.at |</span><span class="relative pin-b mb-8 text-white uppercase second"> web development | Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</span>
+      <span class="relative pin-b mb-8 text-white uppercase third"> <a class="text-white" href="mailto:hallo@wschuetzenhofer.at"> contact</a></span>
+    </div>
+    </div>
+    <!-- <div class="h-10"></div> -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+  function typeEffect(element, speed) {
+    var text = $(element).text();
+    $(element).html('');
+
+    var i = 0;
+    var timer = setInterval(function() {
+            if (i < text.length) {
+              $(element).append(text.charAt(i));
+              i++;
+            } else {
+              clearInterval(timer);
+            }
+          }, speed);
+    }
+
+    $( document ).ready(function() {
+    var speed = 100;
+    var delay = $('.second').text().length * speed + speed;
+    typeEffect($('.second'), speed);
+    setTimeout(function(){
+      $('.first').css('display', 'inline-block');
+      typeEffect($('.first'), speed);
+    }, delay);
+  });
+  </script>
+
+</body>
+
+</html>
